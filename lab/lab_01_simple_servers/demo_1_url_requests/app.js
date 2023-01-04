@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 // so this demo is going to demo url requests
 
 const express = require('express')
@@ -24,5 +23,3 @@ app.get('*', (req, res) => {
 app.listen(3000, () => {
     console.log('example app running on port 3000')
 })
-=======
->>>>>>> fe7d3b1fb1f26332f63c88f71d44ba49b95e1eac
