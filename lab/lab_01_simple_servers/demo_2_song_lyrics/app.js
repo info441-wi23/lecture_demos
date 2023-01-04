@@ -1,5 +1,5 @@
-const fs = require('fs').promises
 
+<<<<<<< HEAD
 const songLyrics = async () => {
     let files = await fs.readdir('song_lyrics')
     console.log(files)
@@ -13,3 +13,5 @@ const songLyrics = async () => {
 }
 
 songLyrics();
+=======
+>>>>>>> fe7d3b1fb1f26332f63c88f71d44ba49b95e1eac
