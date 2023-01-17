@@ -9,5 +9,4 @@ router.get('/', (req, res) => {
 
 router.use('/desserts', menuDessertsRouter)
 
-
 export default router
