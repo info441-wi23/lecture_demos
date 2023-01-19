@@ -19,6 +19,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+    console.log("This is the first additional piece of middleware I added!")
+    next();
+    console.log("The first middware can run something after the request is completed")
+})
+
+app.use((req, res, next) => {
+    console.log("Second middlware, which adds information to the request object to be used later")
+    req.testValue = 3
+    next()
+})
+
+app.use((req, res, next) => {
+    console.log(
+        "Third middleware, which looks up the testValue, which is:",
+        req.testValue
+    )
+    next()
+})
+
 app.use('/users', usersRouter);
 
 export default app;
