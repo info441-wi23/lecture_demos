@@ -11,7 +11,7 @@ async function createUser(){
     }
 
     // send data to server
-    let response = await fetch("api/users", {
+    let response = await fetch("api/v1/users", {
         method: "POST",
         body: JSON.stringify(myData),
         headers: {
@@ -23,7 +23,7 @@ async function createUser(){
 
 async function getUsers(){
     // do an ajax call
-    let response = await fetch("api/users") // default is GET
+    let response = await fetch("api/v1/users") // default is GET
     let usersJson = await response.json()
 
    

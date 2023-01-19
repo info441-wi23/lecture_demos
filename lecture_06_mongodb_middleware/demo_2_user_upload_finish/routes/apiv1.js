@@ -1,4 +1,4 @@
-import usersRouter from './users.js';
+import usersRouter from './controllers/users.js';
 import express from 'express'
 var router = express.Router()
 
