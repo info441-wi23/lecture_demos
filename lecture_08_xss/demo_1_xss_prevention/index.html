@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script>
+        function init(){
+            let unsafeString = "This is a <em>test</em> of unsafe content"
+
+            htmlString = `
+                <p>
+                    a paragraph
+                    <span id ="spanToInsert"></span>
+                </p>
+            `
+            let parser = new DOMParser();
+            let parsedHtml = parser.parseFromString(htmlString, 'text/html');
+
+            parsedHtml.getElementById("spanToInsert").innerText = unsafeString
+
+            document.body.innerHTML = parsedHtml.body.innerHTML
+            
+            // or:
+            //document.body.appendChild(parsedHtml.documentElement)
+        }
+    </script>
+
+</head>
+<body onload = init()>
+
+</body>
+</html>
