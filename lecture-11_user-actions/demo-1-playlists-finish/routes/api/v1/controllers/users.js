@@ -46,4 +46,15 @@ router.post('/bands', async(req, res) => {
     //TODO: catch errors
 })
 
+
+router.delete("/", async (req, res) => {
+    let userId = req.body.userId
+
+    // delete all playlists for the user, then the user itself
+    await req.models.Playlist.deleteMany({user: userId})
+    await req.models.User.deleteOne({_id: userId})
+
+    res.json({status: "success"})
+})
+
 export default router
