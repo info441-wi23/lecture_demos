@@ -22,6 +22,11 @@ app.ws('/chatSocket', (ws, res) => {
             socket.send(mySocketNum + ": " + msg)
         })
     })
+
+    ws.on('close', () => {
+        console.log("user " + mySocketNum + " disconnected.")
+        console.log("I should probably delete them from the list")
+    })
 })
 
 
