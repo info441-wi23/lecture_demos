@@ -12,6 +12,12 @@ async function connectDB() {
 
   //Add schemas and models
 
+  const itemSchema = new mongoose.Schema({
+    name: String,
+    price: Number
+  })
+
+  models.Item = mongoose.model("Item", itemSchema)
   
   console.log("finished creating models");
 }
