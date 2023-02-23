@@ -16,11 +16,7 @@ app.use(cookieParser());
 
 app.use('/users', usersRouter);
 
-app.get('/api/double', (req, res) => {
-    let num = req.query.num
-    let doubled = num * 2
-    res.send("" + doubled)
-})
+app.get('/api/double', createProxyMiddleware({target: 'http://localhost:5000'}))
 
 app.get('/api/square', (req, res) => {
     let num = req.query.num
